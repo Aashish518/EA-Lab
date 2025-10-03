@@ -24,7 +24,7 @@ const Location = () => {
                     className="w-5 h-5 text-teal-500"
                 />
                 {/* Show short name on mobile, full name on larger screens */}
-                <span className="text-sm font-semibold">
+                <span className="text-sm font-bold">
                     <span className="sm:inline hidden">
                         {locations.find((loc) => loc.name === selected)?.name}
                     </span>
@@ -40,7 +40,7 @@ const Location = () => {
             </button>
 
             <div
-                className={`absolute left-0 mt-1 w-40 bg-white border rounded shadow-md z-10 transform transition-all duration-300 ease-out origin-top ${open ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+                className={`absolute right-0 mt-1 w-40 bg-white border rounded shadow-md z-10 transform transition-all duration-300 ease-out origin-top ${open ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
                     }`}
             >
                 {locations.map((loc) => (
