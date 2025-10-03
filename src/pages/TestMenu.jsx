@@ -69,7 +69,7 @@ const TestMenu = () => {
                 </div>
 
                 {/* Packages */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-15">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-15">
                     {paginatedPackages.map((pkg, index) => (
                         <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col">
                             <div className="p-5 flex-grow w-full">
@@ -95,45 +95,23 @@ const TestMenu = () => {
                 </div>
 
                 {/* Pagination Controls */}
-                <div className="flex justify-center items-center gap-2 flex-wrap">
+                {/* Pagination Controls */}
+                <div className="flex justify-center items-center gap-3 mt-8">
                     <Button
                         onClick={() => goToPage(currentPage - 1)}
-                        className="px-4 py-2 border rounded-md font-semibold bg-white text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                        className="px-5 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                         disabled={currentPage === 1}
                     >
                         Prev
                     </Button>
 
-                    {startPage > 1 && (
-                        <>
-                            <Button onClick={() => goToPage(1)} className="px-4 py-2 border rounded-md bg-white text-gray-700 hover:bg-gray-100 transition-all">1</Button>
-                            {startPage > 2 && <span className="px-2 text-gray-500">…</span>}
-                        </>
-                    )}
-
-                    {pageNumbers.map(page => (
-                        <Button
-                            key={page}
-                            onClick={() => goToPage(page)}
-                            className={`px-4 py-2 border rounded-md transition-all ${currentPage === page ? 'bg-red-600 text-white shadow-md' : 'bg-white text-gray-700 hover:bg-gray-100'
-                                }`}
-                        >
-                            {page}
-                        </Button>
-                    ))}
-
-                    {endPage < totalPages && (
-                        <>
-                            {endPage < totalPages - 1 && <span className="px-2 text-gray-500">…</span>}
-                            <Button onClick={() => goToPage(totalPages)} className="px-4 py-2 border rounded-md bg-white text-gray-700 hover:bg-gray-100 transition-all">
-                                {totalPages}
-                            </Button>
-                        </>
-                    )}
+                    <span className="px-4 py-2 text-gray-600 font-medium text-sm">
+                        {currentPage} of {totalPages}
+                    </span>
 
                     <Button
                         onClick={() => goToPage(currentPage + 1)}
-                        className="px-4 py-2 border rounded-md font-semibold bg-white text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                        className="px-5 py-2 rounded-lg font-medium text-gray-700 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                         disabled={currentPage === totalPages}
                     >
                         Next

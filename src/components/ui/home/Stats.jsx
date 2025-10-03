@@ -12,7 +12,7 @@ const Stats = () => (
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="bg-gradient-to-r from-teal-100 to-teal-200 text-teal-800 p-6 rounded-xl  flex flex-col items-start justify-center">
                     <p className="text-3xl font-bold">7,00,000+</p>
                     <p className="mt-2 text-sm font-medium">Customers Served</p>

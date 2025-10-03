@@ -7,7 +7,7 @@ const NavBar = () => {
     const menuItems = [
         { name: "Home", href: "/" },
         { name: "Test Menu", href: "/test-menu" },
-        { name: "What we offer", href: "#" },
+        { name: "Contact Us", href: "/contactus" },
         { name: "Recognition", href: "#" },
         { name: "Our Blogs", href: "#" },
     ];
@@ -44,25 +44,27 @@ const NavBar = () => {
             </div>
 
             {/* Mobile Menu */}
-            {isOpen && (
-                <div className="fixed top-12 left-0 w-full bg-white shadow-md py-4 z-50">
-                    <div className="flex flex-col items-center space-y-4 text-gray-700">
-                        {menuItems.map((item, i) => (
-                            <a
-                                key={i}
-                                href={item.href}
-                                className={`transition ${currentPath === item.href
-                                        ? "text-teal-500 font-bold"
-                                        : "hover:text-teal-500"
-                                    }`}
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {item.name}
-                            </a>
-                        ))}
-                    </div>
+            <div
+                className={`fixed left-0 w-full h-screen bg-white shadow-md py-4 z-50 transform transition-all duration-800 ease-out ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+                    }`}
+            >
+                <div className="flex flex-col items-center space-y-4 text-gray-700">
+                    {menuItems.map((item, i) => (
+                        <a
+                            key={i}
+                            href={item.href}
+                            className={`transition ${currentPath === item.href
+                                    ? "text-teal-500 font-bold"
+                                    : "hover:text-teal-500"
+                                }`}
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {item.name}
+                        </a>
+                    ))}
                 </div>
-            )}
+            </div>
+
         </nav>
     );
 };

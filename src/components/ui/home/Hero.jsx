@@ -22,7 +22,7 @@ const Hero = () => {
     const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
     return (
-        <section className="relative h-[800px] sm:h-[450px] md:h-[500px] overflow-hidden">
+        <section className="relative h-[500px] sm:h-[450px] md:h-[500px] overflow-hidden">
             <div className="relative max-w-7xl mx-auto h-full">
                 {/* Slides */}
                 {slides.map((slide, index) => (
