@@ -95,7 +95,6 @@ const TestMenu = () => {
                 </div>
 
                 {/* Pagination Controls */}
-                {/* Pagination Controls */}
                 <div className="flex justify-center items-center gap-3 mt-8">
                     <Button
                         onClick={() => goToPage(currentPage - 1)}
@@ -129,7 +128,7 @@ const TestMenu = () => {
                     ></div>
 
                     {/* Modal */}
-                    <div className="relative bg-white rounded-xl max-w-lg w-full p-8 shadow-2xl z-10">
+                    <div className="relative bg-white rounded-xl max-w-lg w-full p-8 shadow-2xl z-10 animate-slide-down">
                         {/* Close Button */}
                         <button
                             className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-all"
@@ -163,6 +162,7 @@ const TestMenu = () => {
                     </div>
                 </div>
             )}
+
         </section>
     );
 };

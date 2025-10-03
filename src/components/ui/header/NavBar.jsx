@@ -47,7 +47,7 @@ const NavBar = () => {
             {/* Mobile Menu */}
             {/* Mobile Menu */}
             <div
-                className={`fixed top-0 left-0 w-full h-screen bg-white shadow-md z-50 transform transition-all duration-700 ease-out ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+                className={`fixed top-0 left-0 w-full h-full bg-white shadow-md z-50 transform transition-all duration-700 ease-out ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
                     }`}
             >
                 {/* Close Button: Floating top-right */}

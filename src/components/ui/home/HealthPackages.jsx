@@ -16,7 +16,7 @@ const HealthPackages = ({ handletestdetail }) => {
     return (
         <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-center mb-10">Curated Health Checkup Packages</h2>
+                <h2 className="text-3xl font-bold mb-10">Curated Health Checkup Packages</h2>
                 <div className="flex gap-2 mb-12 overflow-x-auto whitespace-nowrap md:justify-start pb-3">
                     {categories.map(category => (
                         <Button
