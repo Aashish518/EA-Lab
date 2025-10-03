@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import SocialIcons from "./SocialIcons "; // Make sure the path is correct
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,8 +25,8 @@ const NavBar = () => {
                         key={i}
                         href={item.href}
                         className={`transition ${currentPath === item.href
-                                ? "text-teal-500 font-bold"
-                                : "hover:text-teal-500"
+                            ? "text-teal-500 font-bold"
+                            : "hover:text-teal-500"
                             }`}
                     >
                         {item.name}
@@ -44,24 +45,41 @@ const NavBar = () => {
             </div>
 
             {/* Mobile Menu */}
+            {/* Mobile Menu */}
             <div
-                className={`fixed left-0 w-full h-screen bg-white shadow-md py-4 z-50 transform transition-all duration-800 ease-out ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+                className={`fixed top-0 left-0 w-full h-screen bg-white shadow-md z-50 transform transition-all duration-700 ease-out ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
                     }`}
             >
-                <div className="flex flex-col items-center space-y-4 text-gray-700">
-                    {menuItems.map((item, i) => (
-                        <a
-                            key={i}
-                            href={item.href}
-                            className={`transition ${currentPath === item.href
-                                    ? "text-teal-500 font-bold"
-                                    : "hover:text-teal-500"
-                                }`}
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {item.name}
-                        </a>
-                    ))}
+                {/* Close Button: Floating top-right */}
+                <button
+                    onClick={() => setIsOpen(false)}
+                    className="absolute top-6 left-6 text-gray-700 focus:outline-none z-50"
+                >
+                    <X size={28} />
+                </button>
+
+                <div className="flex flex-col items-center justify-between h-full text-gray-700 pt-16">
+                    {/* Navigation Links */}
+                    <div className="flex flex-col items-center space-y-6">
+                        {menuItems.map((item, i) => (
+                            <a
+                                key={i}
+                                href={item.href}
+                                className={`transition ${currentPath === item.href
+                                        ? "text-teal-500 font-bold"
+                                        : "hover:text-teal-500"
+                                    }`}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {item.name}
+                            </a>
+                        ))}
+                    </div>
+
+                    {/* Social Icons */}
+                    <div className="pb-6">
+                        <SocialIcons />
+                    </div>
                 </div>
             </div>
 
