@@ -17,11 +17,11 @@ const Location = () => {
         <div className="relative">
             <button
                 onClick={() => setOpen(!open)}
-                className="flex items-center space-x-1 px-2 py-1 rounded transition duration-200 hover:scale-105 hover:shadow-md hover:bg-teal-50 hover:border hover:border-teal-500 hover:rounded-md"
+                className="flex items-center space-x-1 px-2 py-1 rounded transition duration-200 hover:scale-105 hover:shadow-md hover:bg-gradient-to-r hover:from-pink-100 hover:to-white hover:border hover:border-[#203270] hover:rounded-md"
             >
                 <Icon
                     path="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    className="w-5 h-5 text-teal-500"
+                    className="w-5 h-5 text-[#203270]"
                 />
                 {/* Show short name on mobile, full name on larger screens */}
                 <span className="text-sm font-bold">

@@ -1,12 +1,12 @@
 import React from "react";
 
 const Stats = () => (
-    <section className="bg-teal-50 py-20 w-full">
+    <section className="bg-[#203270] py-20 w-full">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
             {/* Header */}
             <div className="mb-10 text-left">
-                <h2 className="text-4xl font-bold mb-2 text-teal-900">EA Labs - Trusted by Families</h2>
-                <p className="text-gray-600 max-w-2xl text-lg">
+                <h2 className="text-4xl font-bold mb-2 text-white">EA Labs - Trusted by Families</h2>
+                <p className="text-white max-w-2xl text-lg">
                     Our single goal: fast, accurate, affordable diagnostics for every patient.
                 </p>
             </div>

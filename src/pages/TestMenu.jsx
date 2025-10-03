@@ -1,11 +1,7 @@
 import { useState } from "react";
 import Icon from "../components/Icon";
+import Button from "../components/ui/common/Button";
 
-const Button = ({ children, onClick, className, disabled }) => (
-    <button onClick={onClick} className={className} disabled={disabled}>
-        {children}
-    </button>
-);
 
 const TestMenu = () => {
     const categories = ["Heart", "Liver", "Vitamins", "Diabetes", "Thyroid", "Allergy"];
@@ -32,17 +28,6 @@ const TestMenu = () => {
         if (page < 1 || page > totalPages) return;
         setCurrentPage(page);
     };
-
-    const maxButtons = 3;
-    let startPage = Math.max(1, currentPage - 1);
-    let endPage = Math.min(totalPages, startPage + maxButtons - 1);
-    if (endPage - startPage + 1 < maxButtons) {
-        startPage = Math.max(1, endPage - maxButtons + 1);
-    }
-    const pageNumbers = [];
-    for (let i = startPage; i <= endPage; i++) {
-        pageNumbers.push(i);
-    }
 
     // Modal state
     const [selectedPackage, setSelectedPackage] = useState(null);

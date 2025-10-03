@@ -2,7 +2,7 @@ import Icon from "../../Icon";
 
 // Features Component
 const Features = () => (
-  <section className="bg-white">
+  <section className="bg-white mb-10">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-10">
       <div className="bg-red-600 text-white rounded-lg shadow-lg flex flex-col md:flex-row justify-around items-center py-6">
         <div className="flex items-center space-x-4 p-4">

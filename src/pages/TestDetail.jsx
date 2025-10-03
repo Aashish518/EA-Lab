@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Button from '../components/ui/common/Button';
 
 const testsData = [
     {
@@ -61,12 +62,16 @@ const TestDetail = () => {
     const testDetails = testsData[id].details;
     const test = testsData[id];
 
+    const handleClick = () => {
+        navigate("/contactus")
+    }
+
     return (
         <div className="bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="mb-6">
                     <button
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate("/", { state: { scrollToHealthPackages: true } })}
                         className="flex items-center text-gray-700 hover:text-gray-900 font-medium"
                     >
                         <svg
@@ -81,6 +86,8 @@ const TestDetail = () => {
                         </svg>
                         Back
                     </button>
+
+
                 </div>
                 <div className="grid lg:grid-cols-3 gap-8">
                     <div className="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg">
@@ -124,9 +131,11 @@ const TestDetail = () => {
                                 <span className="text-3xl font-bold text-red-600">{test.price}</span>
                             </div>
                             <p className="text-sm text-gray-500 mb-6">Includes all taxes and fees.</p>
-                            <button className="w-full bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+                            <Button
+                                onClick={handleClick}
+                                className="w-full bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
                                 Contact Us
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 </div>

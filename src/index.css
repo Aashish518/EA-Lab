@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+    font-family: 'Urbanist', ui-sans-serif, system-ui !important;
+}
+
 /* TestMenu Model */
 @keyframes slide-down {
     from {

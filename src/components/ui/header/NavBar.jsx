@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import SocialIcons from "./SocialIcons "; // Make sure the path is correct
+import { Link, useLocation } from "react-router-dom"; // import Link and useLocation
+import SocialIcons from "./SocialIcons "; // Make sure path is correct
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation(); // get current path
 
     const menuItems = [
         { name: "Home", href: "/" },
@@ -13,24 +15,21 @@ const NavBar = () => {
         { name: "Our Blogs", href: "#" },
     ];
 
-    // Get current path
-    const currentPath = typeof window !== "undefined" ? window.location.pathname : "";
-
     return (
-        <nav className="relative">
+        <nav>
             {/* Desktop Menu */}
-            <div className="hidden sm:flex items-center justify-center text-sm font-medium text-gray-600 space-x-8 py-2">
+            <div className="hidden ml-2 sm:flex items-center justify-center text-sm font-medium text-black space-x-8 py-2">
                 {menuItems.map((item, i) => (
-                    <a
+                    <Link
                         key={i}
-                        href={item.href}
-                        className={`transition ${currentPath === item.href
-                            ? "text-teal-500 font-bold"
-                            : "hover:text-teal-500"
+                        to={item.href}
+                        className={`transition ${location.pathname === item.href
+                            ? "text-[#AA1626] font-bold"
+                            : "hover:text-[#AA1626]"
                             }`}
                     >
                         {item.name}
-                    </a>
+                    </Link>
                 ))}
             </div>
 
@@ -45,12 +44,11 @@ const NavBar = () => {
             </div>
 
             {/* Mobile Menu */}
-            {/* Mobile Menu */}
             <div
                 className={`fixed top-0 left-0 w-full h-full bg-white shadow-md z-50 transform transition-all duration-700 ease-out ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
                     }`}
             >
-                {/* Close Button: Floating top-right */}
+                {/* Close Button */}
                 <button
                     onClick={() => setIsOpen(false)}
                     className="absolute top-6 left-6 text-gray-700 focus:outline-none z-50"
@@ -58,21 +56,21 @@ const NavBar = () => {
                     <X size={28} />
                 </button>
 
-                <div className="flex flex-col items-center justify-between h-full text-gray-700 pt-16">
+                <div className="flex flex-col items-center justify-between h-full text-black pt-16">
                     {/* Navigation Links */}
                     <div className="flex flex-col items-center space-y-6">
                         {menuItems.map((item, i) => (
-                            <a
+                            <Link
                                 key={i}
-                                href={item.href}
-                                className={`transition ${currentPath === item.href
-                                        ? "text-teal-500 font-bold"
-                                        : "hover:text-teal-500"
+                                to={item.href}
+                                className={`transition ${location.pathname === item.href
+                                    ? "text-[#AA1626] font-bold"
+                                    : "hover:text-[#AA1626]"
                                     }`}
                                 onClick={() => setIsOpen(false)}
                             >
                                 {item.name}
-                            </a>
+                            </Link>
                         ))}
                     </div>
 
@@ -82,7 +80,6 @@ const NavBar = () => {
                     </div>
                 </div>
             </div>
-
         </nav>
     );
 };

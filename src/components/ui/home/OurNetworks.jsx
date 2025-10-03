@@ -92,7 +92,7 @@ export default function OurNetworks() {
     const [selectedLocation, setSelectedLocation] = useState(locations[0]);
 
     return (
-        <div className="bg-[#f3f4ff] w-full py-12 px-4 sm:px-8">
+        <div className="bg-gradient-to-r from-purple-200 to-white w-full py-12 px-4 sm:px-8">
             <div className="max-w-7xl mx-auto">
                 {/* Header Section */}
                 <div className="mb-10 text-center md:text-left">
